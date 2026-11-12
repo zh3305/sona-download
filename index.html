@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Sona - 客户端下载</title>
-<meta name="description" content="Sona 即时通讯客户端下载，支持 Android 与桌面端。" />
+<meta name="description" content="Sona 即时通讯客户端下载，支持 Android 与 Windows，macOS 即将提供。" />
 <link rel="icon" href="./app-icon.png" />
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -14,121 +14,173 @@
     --ink: #0f172a;
     --muted: #64748b;
     --line: #e2e8f0;
+    --surface: #f8fafc;
   }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
       "PingFang SC", "Microsoft YaHei", sans-serif;
-    background: radial-gradient(1200px 600px at 50% -10%, #dbeafe 0%, #f8fafc 55%, #f1f5f9 100%);
+    background: radial-gradient(1200px 620px at 50% -12%, #dbeafe 0%, #f8fafc 55%, #f1f5f9 100%);
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 24px;
+    padding: 28px 20px;
     color: var(--ink);
   }
   .card {
     background: #fff;
     border: 1px solid var(--line);
     border-radius: 24px;
-    padding: 44px 34px 32px;
-    max-width: 440px;
+    padding: 40px 32px 28px;
+    max-width: 520px;
     width: 100%;
-    text-align: center;
     box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
   }
+  header { text-align: center; }
   .icon {
-    width: 96px;
-    height: 96px;
+    width: 92px;
+    height: 92px;
     border-radius: 22px;
-    margin: 0 auto 20px;
     display: block;
+    margin: 0 auto 18px;
     box-shadow: 0 8px 24px rgba(0, 137, 255, 0.18);
   }
-  h1 { font-size: 27px; letter-spacing: 0.5px; }
+  h1 { font-size: 26px; letter-spacing: 0.4px; }
   .version { color: var(--muted); font-size: 13px; margin: 8px 0 6px; }
-  .desc { color: #475569; font-size: 14px; line-height: 1.7; margin-bottom: 30px; }
-  .btn {
+  .tagline { color: #475569; font-size: 13.5px; line-height: 1.7; }
+
+  .platforms { margin-top: 28px; display: flex; flex-direction: column; gap: 12px; }
+  .row {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-    padding: 15px;
-    border-radius: 14px;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 12px;
-    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
-    border: 1px solid transparent;
+    gap: 14px;
+    padding: 14px 16px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: #fff;
+    transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease;
   }
-  .btn svg { width: 20px; height: 20px; flex: none; }
-  .btn-primary { background: var(--brand); color: #fff; box-shadow: 0 6px 18px rgba(0, 137, 255, 0.28); }
-  .btn-primary:hover { background: var(--brand-deep); transform: translateY(-2px); }
-  .btn-ghost { background: #f8fafc; color: var(--ink); border-color: var(--line); }
-  .btn-ghost:hover { background: #f1f5f9; transform: translateY(-2px); }
-  .btn[aria-disabled="true"] { opacity: 0.45; pointer-events: none; }
-  .meta {
-    margin-top: 22px;
-    padding-top: 18px;
-    border-top: 1px solid var(--line);
-    font-size: 12px;
-    color: var(--muted);
-    line-height: 1.9;
-    text-align: left;
+  .row:hover { border-color: #cbd5e1; box-shadow: 0 8px 22px rgba(15, 23, 42, .07); transform: translateY(-1px); }
+  .row.disabled { opacity: .55; }
+  .row.disabled:hover { transform: none; box-shadow: none; border-color: var(--line); }
+  .row .glyph {
+    width: 42px; height: 42px; flex: none;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 12px; background: var(--surface); color: var(--brand-deep);
   }
-  .meta b { color: #334155; font-weight: 600; }
-  .footer { margin-top: 18px; font-size: 12px; color: #94a3b8; }
+  .row .glyph svg { width: 22px; height: 22px; }
+  .row .info { flex: 1; min-width: 0; text-align: left; }
+  .row .name { font-size: 15px; font-weight: 600; }
+  .row .meta { font-size: 12px; color: var(--muted); margin-top: 3px; }
+  .row .action { flex: none; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 9px 16px; border-radius: 10px;
+    font-size: 13.5px; font-weight: 600; text-decoration: none;
+    border: 1px solid transparent; white-space: nowrap;
+    transition: background .18s ease, transform .18s ease;
+  }
+  .btn-primary { background: var(--brand); color: #fff; box-shadow: 0 4px 14px rgba(0, 137, 255, .26); }
+  .btn-primary:hover { background: var(--brand-deep); transform: translateY(-1px); }
+  .btn-disabled { background: var(--surface); color: #94a3b8; border-color: var(--line); pointer-events: none; }
+
+  .divider { height: 1px; background: var(--line); margin: 26px 0 18px; }
+  .facts { display: grid; gap: 8px; font-size: 12px; color: var(--muted); line-height: 1.6; }
+  .facts div { display: flex; gap: 8px; }
+  .facts b { color: #334155; font-weight: 600; flex: none; width: 74px; }
+  .facts span { word-break: break-all; }
+
+  footer { margin-top: 22px; text-align: center; font-size: 12px; color: #94a3b8; }
   a.link { color: var(--brand); text-decoration: none; }
   a.link:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
   <main class="card">
-    <img class="icon" src="./app-icon.png" alt="Sona" />
-    <h1>Sona</h1>
-    <p class="version">当前版本 v3.8.4（build 236）</p>
-    <p class="desc">安全、简洁的即时通讯客户端<br />支持单聊、群聊、音视频通话、USDT 钱包与消息翻译</p>
+    <header>
+      <img class="icon" src="./app-icon.png" alt="Sona" />
+      <h1>Sona</h1>
+      <p class="version">当前版本 v3.8.4 · build 236</p>
+      <p class="tagline">安全、简洁的即时通讯客户端<br />单聊 · 群聊 · 音视频通话 · USDT 钱包 · 消息翻译</p>
+    </header>
 
-    <a class="btn btn-primary"
-       href="https://github.com/zh3305/sona-download/releases/latest/download/app-release.apk">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <rect x="6" y="2" width="12" height="20" rx="2.5" />
-        <path d="M11 18.5h2" />
-      </svg>
-      Android 下载（APK）
-    </a>
+    <section class="platforms">
+      <!-- Android -->
+      <div class="row">
+        <div class="glyph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="6" y="2" width="12" height="20" rx="2.5" />
+            <path d="M11 18.5h2" />
+          </svg>
+        </div>
+        <div class="info">
+          <div class="name">Android</div>
+          <div class="meta">APK · 218.6 MB · arm64-v8a + x86_64</div>
+        </div>
+        <div class="action">
+          <a class="btn btn-primary"
+             href="https://github.com/zh3305/sona-download/releases/latest/download/app-release.apk">
+            下载
+          </a>
+        </div>
+      </div>
 
-    <a class="btn btn-ghost" href="https://github.com/zh3305/sona-download/releases" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M12 3v12" /><path d="m7 10 5 5 5-5" /><path d="M4 21h16" />
-      </svg>
-      全部历史版本
-    </a>
+      <!-- Windows -->
+      <div class="row">
+        <div class="glyph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="12" rx="2" />
+            <path d="M8 20h8" />
+          </svg>
+        </div>
+        <div class="info">
+          <div class="name">Windows</div>
+          <div class="meta">安装包 · 76.8 MB · x64 · Windows 10 及以上</div>
+        </div>
+        <div class="action">
+          <a class="btn btn-primary"
+             href="https://github.com/zh3305/sona-download/releases/latest/download/Sona-Windows-Setup.exe">
+            下载
+          </a>
+        </div>
+      </div>
 
-    <a class="btn btn-ghost" aria-disabled="true" href="#">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <rect x="3" y="4" width="18" height="12" rx="2" />
-        <path d="M8 20h8" />
-      </svg>
-      Windows 桌面端（即将提供）
-    </a>
+      <!-- macOS -->
+      <div class="row disabled">
+        <div class="glyph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="12" rx="2" />
+            <path d="M9 20h6" /><circle cx="12" cy="10" r="2.2" />
+          </svg>
+        </div>
+        <div class="info">
+          <div class="name">macOS</div>
+          <div class="meta">需 macOS 构建环境，暂未提供</div>
+        </div>
+        <div class="action">
+          <span class="btn btn-disabled">敬请期待</span>
+        </div>
+      </div>
+    </section>
 
-    <div class="meta">
-      <div><b>安装包</b>：app-release.apk（218.6 MB，arm64-v8a + x86_64）</div>
-      <div><b>系统要求</b>：Android 6.0 (API 23) 及以上</div>
-      <div><b>SHA-256</b>：<span style="word-break: break-all;">baee2a07ebdc7f54e8c00f81d861c186a5905adc4eaf8450b51aa7d374ec9b27</span></div>
-      <div><b>安装提示</b>：首次安装需在系统中允许「安装未知来源应用」</div>
-    </div>
+    <div class="divider"></div>
 
-    <p class="footer">
+    <section class="facts">
+      <div><b>Android</b><span>SHA-256 baee2a07ebdc7f54e8c00f81d861c186a5905adc4eaf8450b51aa7d374ec9b27</span></div>
+      <div><b>Windows</b><span>SHA-256 14976adeecfb8fb809ea2bdfb07683eff59bee942c9c65842f05b775c19b26b6</span></div>
+      <div><b>安装提示</b><span>Android 需允许「安装未知来源应用」；Windows 安装包未签名，SmartScreen 可能提示，选择「仍要运行」即可</span></div>
+    </section>
+
+    <footer>
+      <a class="link" href="https://github.com/zh3305/sona-download/releases">历史版本</a>
+      ·
       <a class="link" href="https://github.com/zh3305/sona-download">GitHub 仓库</a>
       ·
       <a class="link" href="https://github.com/zh3305/sona-download/issues">反馈问题</a>
-    </p>
+    </footer>
   </main>
 </body>
 </html>
