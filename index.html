@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Sona - 客户端下载</title>
-<meta name="description" content="Sona 即时通讯客户端下载，支持 Android 与 Windows，macOS 即将提供。" />
+<meta name="description" content="Sona 即时通讯客户端下载，支持 Android 与 Windows，提供大陆加速线路。" />
 <link rel="icon" href="./app-icon.png" />
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -32,28 +32,24 @@
     border: 1px solid var(--line);
     border-radius: 24px;
     padding: 40px 32px 28px;
-    max-width: 520px;
+    max-width: 540px;
     width: 100%;
     box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
   }
   header { text-align: center; }
   .icon {
-    width: 92px;
-    height: 92px;
-    border-radius: 22px;
-    display: block;
-    margin: 0 auto 18px;
+    width: 92px; height: 92px; border-radius: 22px;
+    display: block; margin: 0 auto 18px;
     box-shadow: 0 8px 24px rgba(0, 137, 255, 0.18);
   }
   h1 { font-size: 26px; letter-spacing: 0.4px; }
   .version { color: var(--muted); font-size: 13px; margin: 8px 0 6px; }
   .tagline { color: #475569; font-size: 13.5px; line-height: 1.7; }
 
-  .platforms { margin-top: 28px; display: flex; flex-direction: column; gap: 12px; }
+  .platforms { margin-top: 28px; display: flex; flex-direction: column; gap: 16px; }
+  .group { display: flex; flex-direction: column; gap: 8px; }
   .row {
-    display: flex;
-    align-items: center;
-    gap: 14px;
+    display: flex; align-items: center; gap: 14px;
     padding: 14px 16px;
     border: 1px solid var(--line);
     border-radius: 16px;
@@ -63,16 +59,16 @@
   .row:hover { border-color: #cbd5e1; box-shadow: 0 8px 22px rgba(15, 23, 42, .07); transform: translateY(-1px); }
   .row.disabled { opacity: .55; }
   .row.disabled:hover { transform: none; box-shadow: none; border-color: var(--line); }
-  .row .glyph {
+  .glyph {
     width: 42px; height: 42px; flex: none;
     display: flex; align-items: center; justify-content: center;
     border-radius: 12px; background: var(--surface); color: var(--brand-deep);
   }
-  .row .glyph svg { width: 22px; height: 22px; }
-  .row .info { flex: 1; min-width: 0; text-align: left; }
-  .row .name { font-size: 15px; font-weight: 600; }
-  .row .meta { font-size: 12px; color: var(--muted); margin-top: 3px; }
-  .row .action { flex: none; }
+  .glyph svg { width: 22px; height: 22px; }
+  .info { flex: 1; min-width: 0; text-align: left; }
+  .name { font-size: 15px; font-weight: 600; }
+  .meta { font-size: 12px; color: var(--muted); margin-top: 3px; }
+  .action { flex: none; }
   .btn {
     display: inline-flex; align-items: center; gap: 6px;
     padding: 9px 16px; border-radius: 10px;
@@ -84,11 +80,36 @@
   .btn-primary:hover { background: var(--brand-deep); transform: translateY(-1px); }
   .btn-disabled { background: var(--surface); color: #94a3b8; border-color: var(--line); pointer-events: none; }
 
+  /* 大陆加速线路 */
+  .mirrors {
+    display: flex; align-items: center; flex-wrap: wrap; gap: 8px;
+    padding: 0 4px 0 72px;
+    font-size: 12px; color: var(--muted);
+  }
+  .mirrors .tag {
+    display: inline-flex; align-items: center; gap: 4px;
+    color: #b45309; background: #fffbeb; border: 1px solid #fde68a;
+    padding: 2px 7px; border-radius: 6px; flex: none;
+  }
+  .mirrors a {
+    color: var(--brand-deep); text-decoration: none;
+    padding: 2px 7px; border-radius: 6px; background: var(--surface);
+    border: 1px solid var(--line);
+  }
+  .mirrors a:hover { background: #eff6ff; border-color: #bfdbfe; }
+
   .divider { height: 1px; background: var(--line); margin: 26px 0 18px; }
   .facts { display: grid; gap: 8px; font-size: 12px; color: var(--muted); line-height: 1.6; }
   .facts div { display: flex; gap: 8px; }
   .facts b { color: #334155; font-weight: 600; flex: none; width: 74px; }
   .facts span { word-break: break-all; }
+
+  .note {
+    margin-top: 16px; padding: 12px 14px;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+    font-size: 12px; color: var(--muted); line-height: 1.75;
+  }
+  .note b { color: #334155; }
 
   footer { margin-top: 22px; text-align: center; font-size: 12px; color: #94a3b8; }
   a.link { color: var(--brand); text-decoration: none; }
@@ -106,62 +127,80 @@
 
     <section class="platforms">
       <!-- Android -->
-      <div class="row">
-        <div class="glyph">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="6" y="2" width="12" height="20" rx="2.5" />
-            <path d="M11 18.5h2" />
-          </svg>
+      <div class="group">
+        <div class="row">
+          <div class="glyph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="6" y="2" width="12" height="20" rx="2.5" />
+              <path d="M11 18.5h2" />
+            </svg>
+          </div>
+          <div class="info">
+            <div class="name">Android</div>
+            <div class="meta">APK · 218.6 MB · arm64-v8a + x86_64</div>
+          </div>
+          <div class="action">
+            <a class="btn btn-primary"
+               href="https://github.com/zh3305/sona-download/releases/download/v3.8.4/app-release.apk">
+              下载
+            </a>
+          </div>
         </div>
-        <div class="info">
-          <div class="name">Android</div>
-          <div class="meta">APK · 218.6 MB · arm64-v8a + x86_64</div>
-        </div>
-        <div class="action">
-          <a class="btn btn-primary"
-             href="https://github.com/zh3305/sona-download/releases/latest/download/app-release.apk">
-            下载
-          </a>
+        <div class="mirrors">
+          <span class="tag">大陆加速</span>
+          <a href="https://gh-proxy.com/https://github.com/zh3305/sona-download/releases/download/v3.8.4/app-release.apk">gh-proxy</a>
+          <a href="https://ghproxy.net/https://github.com/zh3305/sona-download/releases/download/v3.8.4/app-release.apk">ghproxy.net</a>
+          <a href="https://gh.monlor.com/https://github.com/zh3305/sona-download/releases/download/v3.8.4/app-release.apk">monlor</a>
         </div>
       </div>
 
       <!-- Windows -->
-      <div class="row">
-        <div class="glyph">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="3" y="4" width="18" height="12" rx="2" />
-            <path d="M8 20h8" />
-          </svg>
+      <div class="group">
+        <div class="row">
+          <div class="glyph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="12" rx="2" />
+              <path d="M8 20h8" />
+            </svg>
+          </div>
+          <div class="info">
+            <div class="name">Windows</div>
+            <div class="meta">安装包 · 76.8 MB · x64 · Windows 10 及以上</div>
+          </div>
+          <div class="action">
+            <a class="btn btn-primary"
+               href="https://github.com/zh3305/sona-download/releases/download/v3.8.4/Sona-Windows-Setup.exe">
+              下载
+            </a>
+          </div>
         </div>
-        <div class="info">
-          <div class="name">Windows</div>
-          <div class="meta">安装包 · 76.8 MB · x64 · Windows 10 及以上</div>
-        </div>
-        <div class="action">
-          <a class="btn btn-primary"
-             href="https://github.com/zh3305/sona-download/releases/latest/download/Sona-Windows-Setup.exe">
-            下载
-          </a>
+        <div class="mirrors">
+          <span class="tag">大陆加速</span>
+          <a href="https://gh-proxy.com/https://github.com/zh3305/sona-download/releases/download/v3.8.4/Sona-Windows-Setup.exe">gh-proxy</a>
+          <a href="https://ghproxy.net/https://github.com/zh3305/sona-download/releases/download/v3.8.4/Sona-Windows-Setup.exe">ghproxy.net</a>
+          <a href="https://gh.monlor.com/https://github.com/zh3305/sona-download/releases/download/v3.8.4/Sona-Windows-Setup.exe">monlor</a>
         </div>
       </div>
 
       <!-- macOS -->
-      <div class="row disabled">
-        <div class="glyph">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="3" y="4" width="18" height="12" rx="2" />
-            <path d="M9 20h6" /><circle cx="12" cy="10" r="2.2" />
-          </svg>
-        </div>
-        <div class="info">
-          <div class="name">macOS</div>
-          <div class="meta">需 macOS 构建环境，暂未提供</div>
-        </div>
-        <div class="action">
-          <span class="btn btn-disabled">敬请期待</span>
+      <div class="group">
+        <div class="row disabled">
+          <div class="glyph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="12" rx="2" />
+              <path d="M9 20h6" /><circle cx="12" cy="10" r="2.2" />
+            </svg>
+          </div>
+          <div class="info">
+            <div class="name">macOS</div>
+            <div class="meta">构建中 · 需 macOS 环境，CI 已就绪</div>
+          </div>
+          <div class="action">
+            <span class="btn btn-disabled">敬请期待</span>
+          </div>
         </div>
       </div>
     </section>
@@ -173,6 +212,14 @@
       <div><b>Windows</b><span>SHA-256 14976adeecfb8fb809ea2bdfb07683eff59bee942c9c65842f05b775c19b26b6</span></div>
       <div><b>安装提示</b><span>Android 需允许「安装未知来源应用」；Windows 安装包未签名，SmartScreen 可能提示，选择「仍要运行」即可</span></div>
     </section>
+
+    <div class="note">
+      <b>关于加速线路</b>：直连按钮走 GitHub 官方源；「大陆加速」为社区公益反代（基于 Cloudflare Workers，不落地存储），
+      <b>不保证长期可用</b>，失效时换一个线路即可。安装包请在安装前对照上方 SHA-256 校验，
+      下载完成后可用 IDM / aria2 等工具断点续传。<br />
+      <b>本页访问慢？</b>本站托管在 GitHub Pages，大陆访问可能不稳定；也可直接访问
+      <a class="link" href="https://github.com/zh3305/sona-download/releases">Release 页面</a>获取安装包。
+    </div>
 
     <footer>
       <a class="link" href="https://github.com/zh3305/sona-download/releases">历史版本</a>
