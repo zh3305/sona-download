@@ -111,17 +111,70 @@
   }
   .note b { color: #334155; }
 
+
+  /* 顶部导航 */
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; margin-bottom: 18px;
+  }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
+  .brand img { width: 40px; height: 40px; border-radius: 10px; }
+  .brand b { font-size: 17px; }
+  .brand span { font-size: 12px; color: var(--muted); display: block; margin-top: 2px; }
+  .nav { display: flex; gap: 8px; }
+  .nav a {
+    font-size: 13px; text-decoration: none; color: #334155;
+    padding: 8px 14px; border-radius: 10px; border: 1px solid var(--line);
+    background: #fff; transition: background .18s ease, border-color .18s ease;
+  }
+  .nav a:hover { background: #eff6ff; border-color: #bfdbfe; color: var(--brand-deep); }
+  .nav a.active { background: var(--brand); border-color: var(--brand); color: #fff; }
+
+  /* 核心功能 */
+  .features { margin-top: 24px; }
+  .features .title {
+    display: flex; align-items: baseline; gap: 8px;
+    font-size: 13px; color: var(--muted); margin-bottom: 12px;
+  }
+  .features .title a { margin-left: auto; font-size: 12.5px; color: var(--brand); text-decoration: none; }
+  .features .title a:hover { text-decoration: underline; }
+  .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .feature {
+    display: flex; align-items: center; gap: 10px;
+    padding: 11px 12px; border: 1px solid var(--line); border-radius: 12px;
+    background: #fff; font-size: 13px; color: #334155;
+  }
+  .feature .ico {
+    width: 28px; height: 28px; flex: none; border-radius: 8px;
+    background: #eff6ff; color: var(--brand-deep);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .feature .ico svg { width: 16px; height: 16px; }
+  @media (max-width: 420px) { .feature-grid { grid-template-columns: 1fr; } }
+
   footer { margin-top: 22px; text-align: center; font-size: 12px; color: #94a3b8; }
   a.link { color: var(--brand); text-decoration: none; }
   a.link:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
+  <div class="wrap">
+  <div class="topbar">
+    <a class="brand" href="./index.html">
+      <img src="./app-icon.png" alt="Sona" />
+      <div><b>Sona</b><span>即时通讯客户端</span></div>
+    </a>
+    <nav class="nav">
+      <a class="active" href="./index.html">下载</a>
+      <a href="./features.html">功能介绍</a>
+      <a href="./changelog.html">更新日志</a>
+    </nav>
+  </div>
   <main class="card">
     <header>
       <img class="icon" src="./app-icon.png" alt="Sona" />
       <h1>Sona</h1>
-      <p class="version">当前版本 v3.8.4 · build 236</p>
+      <p class="version">当前版本 v3.8.4 · build 236 · <a class="link" href="./changelog.html">更新说明</a></p>
       <p class="tagline">安全、简洁的即时通讯客户端<br />单聊 · 群聊 · 音视频通话 · USDT 钱包 · 消息翻译</p>
     </header>
 
@@ -167,7 +220,7 @@
           </div>
           <div class="info">
             <div class="name">Windows</div>
-            <div class="meta">安装包 · 76.8 MB · x64 · Windows 10 及以上</div>
+            <div class="meta">安装包 · 78.3 MB · x64 · Windows 10 及以上</div>
           </div>
           <div class="action">
             <a class="btn btn-primary"
@@ -241,11 +294,23 @@
       </div>
     </section>
 
+    <section class="features">
+      <div class="title">核心功能<span>·</span><a href="./features.html">查看全部 →</a></div>
+      <div class="feature-grid">
+        <div class="feature"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-4-.9L3 21l1.9-4.6A8.4 8.4 0 1 1 21 11.5z"/></svg></span>单聊 / 群聊 · 消息多端同步</div>
+        <div class="feature"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.5-2.5v9L15 14z"/><rect x="3" y="6" width="12" height="12" rx="2.5"/></svg></span>语音 / 视频通话</div>
+        <div class="feature"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-4-.9L3 21l1.9-4.6A8.4 8.4 0 1 1 21 11.5z"/><path d="M8.5 11.5h7"/></svg></span>引用回复 · 消息翻译</div>
+        <div class="feature"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01M15 9h.01"/></svg></span>朋友圈</div>
+        <div class="feature"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="13" rx="2.5"/><path d="M2.5 10h19"/></svg></span>USDT 钱包（充值/提现/红包）</div>
+        <div class="feature"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg></span>设备管理 · 扫码登录</div>
+      </div>
+    </section>
+
     <div class="divider"></div>
 
     <section class="facts">
       <div><b>Android</b><span>SHA-256 baee2a07ebdc7f54e8c00f81d861c186a5905adc4eaf8450b51aa7d374ec9b27</span></div>
-      <div><b>Windows</b><span>SHA-256 14976adeecfb8fb809ea2bdfb07683eff59bee942c9c65842f05b775c19b26b6</span></div>
+      <div><b>Windows</b><span>SHA-256 a63281dd22cbfb5cb248b14364af94b6443aded38048065c6b26ee1fe7c7b62b</span></div>
       <div><b>macOS M</b><span>SHA-256 14f8fdfd3dc8e6705b5678d2621d0e593c6f73f974608120f14749882493a6bb</span></div>
       <div><b>macOS Intel</b><span>SHA-256 d21ad623af50f7a449fcced6547d3b77fbdadab8534f2ed98c1fa1637bd55d8d</span></div>
       <div><b>安装提示</b><span>Android 需允许「安装未知来源应用」；Windows/macOS 安装包均未签名，系统可能提示，按提示放行（macOS 首次打开需右键→打开）</span></div>
@@ -267,5 +332,6 @@
       <a class="link" href="https://github.com/zh3305/sona-download/issues">反馈问题</a>
     </footer>
   </main>
+  </div>
 </body>
 </html>

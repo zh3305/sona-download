@@ -33,6 +33,19 @@ gh release create v<版本> "H:/Code_Poject/HYIM/mobile/build/app/outputs/flutte
 下载链接用的是 `releases/latest/download/` 固定路径，**发新版不用改**。
 只有版本号、体积、SHA-256 变了才需要改 `index.html`，然后提交推送，Pages 自动重建。
 
+
+## 页面结构
+
+| 文件 | 维护方式 |
+| :-- | :-- |
+| `index.html` | 下载页。版本号 / 体积 / SHA-256 由 `HYIM/scripts/release.mjs --page-dir` **自动改写**，不要手改这几处 |
+| `features.html` | **功能介绍，纯手写**。新增功能后需人工补充 |
+| `changelog.html` | **更新日志，纯手写**。每次发版**必须手动新增一节**（新增/改进/修复） |
+| `app-manifest.json` | 客户端检查更新用，由发版脚本生成，勿手改 |
+
+> 发版脚本只会改 `index.html` 的版本号、体积与 SHA-256，**不会动 features / changelog**，
+> 这两个页面的内容需要人工维护——这正是"介绍与更新说明手动实现"的约定。
+
 ## 约定
 
 - **资产名必须保持 `app-release.apk`**，否则页面上的 latest 直链会 404

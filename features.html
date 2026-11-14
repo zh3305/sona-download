@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sona - 功能介绍</title>
+<meta name="description" content="Sona 客户端功能介绍：即时通讯、音视频通话、朋友圈、USDT 钱包、多端同步与账号安全。" />
+<link rel="icon" href="./app-icon.png" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --brand: #0089ff;
+    --brand-deep: #0068c9;
+    --ink: #0f172a;
+    --muted: #64748b;
+    --line: #e2e8f0;
+    --surface: #f8fafc;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: radial-gradient(1200px 620px at 50% -12%, #dbeafe 0%, #f8fafc 55%, #f1f5f9 100%);
+    min-height: 100vh;
+    padding: 32px 20px 56px;
+    color: var(--ink);
+  }
+  .wrap { max-width: 880px; margin: 0 auto; }
+
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; margin-bottom: 26px;
+  }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
+  .brand img { width: 40px; height: 40px; border-radius: 10px; }
+  .brand b { font-size: 17px; }
+  .brand span { font-size: 12px; color: var(--muted); display: block; margin-top: 2px; }
+  .nav { display: flex; gap: 8px; }
+  .nav a {
+    font-size: 13px; text-decoration: none; color: #334155;
+    padding: 8px 14px; border-radius: 10px; border: 1px solid var(--line);
+    background: #fff; transition: background .18s ease, border-color .18s ease;
+  }
+  .nav a:hover { background: #eff6ff; border-color: #bfdbfe; color: var(--brand-deep); }
+  .nav a.active { background: var(--brand); border-color: var(--brand); color: #fff; }
+
+  .hero { text-align: center; margin-bottom: 34px; }
+  .hero h1 { font-size: 30px; letter-spacing: .3px; }
+  .hero p { margin-top: 10px; color: var(--muted); font-size: 14px; line-height: 1.8; }
+
+  .grid { display: grid; gap: 16px; }
+  @media (min-width: 720px) { .grid.two { grid-template-columns: 1fr 1fr; } }
+
+  .panel {
+    background: #fff; border: 1px solid var(--line); border-radius: 18px;
+    padding: 22px 22px 18px; box-shadow: 0 12px 30px rgba(15, 23, 42, .05);
+  }
+  .panel h2 {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 16.5px; margin-bottom: 14px;
+  }
+  .panel h2 .ico {
+    width: 34px; height: 34px; flex: none; border-radius: 10px;
+    background: #eff6ff; color: var(--brand-deep);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .panel h2 .ico svg { width: 19px; height: 19px; }
+  .panel ul { list-style: none; display: grid; gap: 9px; }
+  .panel li {
+    position: relative; padding-left: 16px;
+    font-size: 13.5px; line-height: 1.7; color: #334155;
+  }
+  .panel li::before {
+    content: ""; position: absolute; left: 0; top: 8px;
+    width: 5px; height: 5px; border-radius: 50%; background: #93c5fd;
+  }
+  .panel li b { color: var(--ink); font-weight: 600; }
+
+  .cta {
+    margin-top: 30px; text-align: center;
+    background: #fff; border: 1px solid var(--line); border-radius: 18px;
+    padding: 26px 22px; box-shadow: 0 12px 30px rgba(15, 23, 42, .05);
+  }
+  .cta p { color: var(--muted); font-size: 13.5px; margin-bottom: 16px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 26px; border-radius: 12px; text-decoration: none;
+    font-size: 14.5px; font-weight: 600;
+    background: var(--brand); color: #fff;
+    box-shadow: 0 8px 22px rgba(0, 137, 255, .28);
+    transition: background .18s ease, transform .18s ease;
+  }
+  .btn:hover { background: var(--brand-deep); transform: translateY(-1px); }
+
+  footer { margin-top: 30px; text-align: center; font-size: 12px; color: #94a3b8; }
+  footer a { color: var(--brand); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <a class="brand" href="./index.html">
+      <img src="./app-icon.png" alt="Sona" />
+      <div><b>Sona</b><span>即时通讯客户端</span></div>
+    </a>
+    <nav class="nav">
+      <a href="./index.html">下载</a>
+      <a class="active" href="./features.html">功能介绍</a>
+      <a href="./changelog.html">更新日志</a>
+    </nav>
+  </div>
+
+  <div class="hero">
+    <h1>功能介绍</h1>
+    <p>一个客户端覆盖聊天、通话、朋友圈与 USDT 钱包<br />Android / Windows / macOS 三端同一账号、消息实时同步</p>
+  </div>
+
+  <div class="grid two">
+
+    <section class="panel">
+      <h2>
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-4-.9L3 21l1.9-4.6A8.4 8.4 0 1 1 21 11.5z"/></svg></span>
+        即时通讯
+      </h2>
+      <ul>
+        <li><b>单聊 / 群聊</b>，消息多端实时同步</li>
+        <li>文本、图片、视频、<b>语音</b>、文件、表情消息</li>
+        <li><b>引用回复</b>、撤回、删除、复制</li>
+        <li><b>消息翻译</b>：中英等多语言互译，译文可收起</li>
+        <li>长按会话：标为已读 / 置顶 / 不显示 / 删除</li>
+        <li>会话置顶、<b>消息免打扰</b>、清空聊天记录</li>
+        <li>常用表情面板（136 个，离线内置）与收藏表情</li>
+        <li>聊天外观：主题与聊天背景</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.5-2.5v9L15 14z"/><rect x="3" y="6" width="12" height="12" rx="2.5"/></svg></span>
+        音视频通话
+      </h2>
+      <ul>
+        <li><b>一对一语音 / 视频通话</b></li>
+        <li><b>通话记录</b>：接通时长、未接来电高亮</li>
+        <li>仅好友可发起通话，减少骚扰</li>
+        <li>通话中可切换扬声器、静音麦克风</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01M15 9h.01"/></svg></span>
+        朋友圈
+      </h2>
+      <ul>
+        <li>发布<b>图文动态</b></li>
+        <li>点赞与评论，实时互动</li>
+        <li>好友动态聚合浏览</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="13" rx="2.5"/><path d="M2.5 10h19"/><path d="M6 15h4"/></svg></span>
+        USDT 钱包（TRC20）
+      </h2>
+      <ul>
+        <li><b>充值</b>：专属 TRC20 地址，链上自动入账</li>
+        <li><b>提现</b>：链上核对 + 额度风控</li>
+        <li><b>转账</b>：会话内直接转账，实时到账</li>
+        <li><b>红包</b>：普通红包 / 拼手气红包</li>
+        <li><b>账单</b>：流水明细、分类筛选、单据详情</li>
+        <li><b>支付密码 + 手势密码</b>双因子保护</li>
+        <li>收款码 / 扫码支付</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9.5 12l1.8 1.8 3.4-3.6"/></svg></span>
+        账号与安全
+      </h2>
+      <ul>
+        <li>好友申请、<b>好友备注</b>、黑名单</li>
+        <li><b>设备管理</b>：查看在线设备、远程退出</li>
+        <li><b>扫码登录</b>桌面端</li>
+        <li>全局搜索：联系人、群聊、聊天记录</li>
+        <li>消息通知：按会话聚合，点击直达</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8"/><path d="M9 9h6"/></svg></span>
+        多端与更新
+      </h2>
+      <ul>
+        <li><b>Android / Windows / macOS</b> 三端可用</li>
+        <li>桌面端<b>自动更新</b>，移动端版本检查</li>
+        <li>同一账号多端登录，消息实时漫游</li>
+        <li>下载页提供<b>大陆加速线路</b>与历史版本</li>
+      </ul>
+    </section>
+
+  </div>
+
+  <div class="cta">
+    <p>立即下载 Sona，Android / Windows / macOS 均已提供安装包</p>
+    <a class="btn" href="./index.html">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M4 20h16"/></svg>
+      前往下载
+    </a>
+  </div>
+
+  <footer>
+    <a href="./index.html">下载</a> ·
+    <a href="./changelog.html">更新日志</a> ·
+    <a href="https://github.com/zh3305/sona-download">GitHub 仓库</a> ·
+    <a href="https://github.com/zh3305/sona-download/issues">反馈问题</a>
+  </footer>
+
+</div>
+</body>
+</html>
