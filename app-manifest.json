@@ -1,0 +1,33 @@
+{
+  "versionName": "3.8.4",
+  "versionCode": 236,
+  "releaseDate": "2026-11-14",
+  "forceUpdate": false,
+  "notes": "修复 Android 插件注册残留；同步桌面端与钱包最新改动。",
+  "platforms": {
+    "android": {
+      "file": "app-release.apk",
+      "size": 229264330,
+      "sha256": "baee2a07ebdc7f54e8c00f81d861c186a5905adc4eaf8450b51aa7d374ec9b27",
+      "url": "https://github.com/zh3305/sona-download/releases/latest/download/app-release.apk"
+    },
+    "windows": {
+      "file": "Sona-Windows-Setup.exe",
+      "size": 82152019,
+      "sha256": "a63281dd22cbfb5cb248b14364af94b6443aded38048065c6b26ee1fe7c7b62b",
+      "url": "https://github.com/zh3305/sona-download/releases/latest/download/Sona-Windows-Setup.exe"
+    },
+    "macos-arm64": {
+      "file": "Sona-macOS-arm64.dmg",
+      "size": 103068774,
+      "sha256": "14f8fdfd3dc8e6705b5678d2621d0e593c6f73f974608120f14749882493a6bb",
+      "url": "https://github.com/zh3305/sona-download/releases/latest/download/Sona-macOS-arm64.dmg"
+    },
+    "macos-x64": {
+      "file": "Sona-macOS-x64.dmg",
+      "size": 108065381,
+      "sha256": "d21ad623af50f7a449fcced6547d3b77fbdadab8534f2ed98c1fa1637bd55d8d",
+      "url": "https://github.com/zh3305/sona-download/releases/latest/download/Sona-macOS-x64.dmg"
+    }
+  }
+}
