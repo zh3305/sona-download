@@ -138,8 +138,42 @@
     <article class="release latest">
       <div class="card">
         <div class="head">
-          <span class="ver">v3.8.5</span>
+          <span class="ver">v3.8.6</span>
           <span class="badge">最新</span>
+          <span class="date">2026-11-15</span>
+        </div>
+
+        <div class="group-title new">新增功能</div>
+        <ul>
+          <li><b>后台常驻（Android）</b>：登录后以常驻通知保持进程存活，锁屏或切到后台仍能及时收到新消息；
+            退出登录或划掉任务即停止，不驻留后台</li>
+          <li><b>消息接收与后台运行</b>：新增设置页，可查看电池优化、自启动、通知权限状态，
+            并按手机品牌（小米 / 华为 / OPPO / vivo / 三星等）给出逐步设置指引；首次登录引导一次，7 天内不再重复</li>
+          <li><b>公众号消息设置</b>：接收消息、消息免打扰、置顶公众号三个开关，入口在公众号资料页</li>
+        </ul>
+
+        <div class="group-title imp">体验改进</div>
+        <ul>
+          <li>公众号与好友关系彻底解耦：关注后即可直接发消息，不再出现「好友验证」类提示；
+            通用资料页也能正确识别公众号，只提供关注 / 取消关注，不再显示「添加到通讯录」与「通话」</li>
+          <li>聊天视频改用系统播放组件，兼容性更好；发送端统一归一化为 H.264，减少对方机型无法播放的情况</li>
+          <li>Windows 自动更新改为版本化下载地址，从本版起后续版本支持<b>差分升级</b>（只下载变化部分，不再每次下整包）</li>
+        </ul>
+
+        <div class="group-title fix">问题修复</div>
+        <ul>
+          <li>修复部分机型打开聊天视频即闪退的问题</li>
+          <li>修复公众号会话发消息被误报「未添加好友」、消息实际未发出的问题</li>
+          <li>修复关闭「接收消息」的公众号粉丝仍会收到自动回复与群发的问题</li>
+          <li>修复通知类账号被当作普通用户添加好友、产生永久待验证申请的问题</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="card">
+        <div class="head">
+          <span class="ver">v3.8.5</span>
           <span class="date">2026-11-15</span>
         </div>
 

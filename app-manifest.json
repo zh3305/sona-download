@@ -1,21 +1,21 @@
 {
-  "versionName": "3.8.5",
-  "versionCode": 237,
+  "versionName": "3.8.6",
+  "versionCode": 238,
   "releaseDate": "2026-11-15",
   "forceUpdate": false,
-  "notes": "新增群机器人（Webhook）与星标朋友；朋友圈滚动标题栏与双击回顶；朋友权限新增不让他看我/不看他；公众号收敛为单一 IM 会话入口；修复桌面端星标崩溃与 Webhook 边界问题。",
+  "notes": "Sona v3.8.6：Android 后台常驻与分厂商后台设置引导；公众号消息设置（接收消息 / 免打扰 / 置顶），关注后即可直接发消息；修复聊天视频播放闪退、公众号发消息被误报未加好友；Windows 后续版本支持差分升级。",
   "changelogUrl": "https://zh3305.github.io/sona-download/changelog.html",
   "platforms": {
     "android": {
       "file": "app-release.apk",
-      "size": 233363168,
-      "sha256": "c777a99728e9c95fa6652a051268f34891da1298b8bf4a26e6121fff333a41f6",
+      "size": 191620256,
+      "sha256": "1f171ad65dfe4e0c4db0830a4e290c8fdfdc3c492dab0948684e9bcf77cfd581",
       "url": "https://github.com/zh3305/sona-download/releases/latest/download/app-release.apk"
     },
     "windows": {
       "file": "Sona-Windows-Setup.exe",
-      "size": 82396980,
-      "sha256": "9296fcd057ec76d1fcba4577edc3f77d8fdff9871442f9e2254b6d441f815dbe",
+      "size": 82397931,
+      "sha256": "acedddb0f475cb722e31eb46340204339587d82e0275dc3e5d5b802dede122f0",
       "url": "https://github.com/zh3305/sona-download/releases/latest/download/Sona-Windows-Setup.exe"
     }
   }
