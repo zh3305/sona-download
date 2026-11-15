@@ -1,33 +1,22 @@
 {
-  "versionName": "3.8.4",
-  "versionCode": 236,
-  "releaseDate": "2026-11-14",
+  "versionName": "3.8.5",
+  "versionCode": 237,
+  "releaseDate": "2026-11-15",
   "forceUpdate": false,
-  "notes": "修复 Android 插件注册残留；同步桌面端与钱包最新改动。",
+  "notes": "新增群机器人（Webhook）与星标朋友；朋友圈滚动标题栏与双击回顶；朋友权限新增不让他看我/不看他；公众号收敛为单一 IM 会话入口；修复桌面端星标崩溃与 Webhook 边界问题。",
+  "changelogUrl": "https://zh3305.github.io/sona-download/changelog.html",
   "platforms": {
     "android": {
       "file": "app-release.apk",
-      "size": 229264330,
-      "sha256": "baee2a07ebdc7f54e8c00f81d861c186a5905adc4eaf8450b51aa7d374ec9b27",
+      "size": 233363168,
+      "sha256": "c777a99728e9c95fa6652a051268f34891da1298b8bf4a26e6121fff333a41f6",
       "url": "https://github.com/zh3305/sona-download/releases/latest/download/app-release.apk"
     },
     "windows": {
       "file": "Sona-Windows-Setup.exe",
-      "size": 82152019,
-      "sha256": "a63281dd22cbfb5cb248b14364af94b6443aded38048065c6b26ee1fe7c7b62b",
+      "size": 82396980,
+      "sha256": "9296fcd057ec76d1fcba4577edc3f77d8fdff9871442f9e2254b6d441f815dbe",
       "url": "https://github.com/zh3305/sona-download/releases/latest/download/Sona-Windows-Setup.exe"
-    },
-    "macos-arm64": {
-      "file": "Sona-macOS-arm64.dmg",
-      "size": 103068774,
-      "sha256": "14f8fdfd3dc8e6705b5678d2621d0e593c6f73f974608120f14749882493a6bb",
-      "url": "https://github.com/zh3305/sona-download/releases/latest/download/Sona-macOS-arm64.dmg"
-    },
-    "macos-x64": {
-      "file": "Sona-macOS-x64.dmg",
-      "size": 108065381,
-      "sha256": "d21ad623af50f7a449fcced6547d3b77fbdadab8534f2ed98c1fa1637bd55d8d",
-      "url": "https://github.com/zh3305/sona-download/releases/latest/download/Sona-macOS-x64.dmg"
     }
   }
 }
