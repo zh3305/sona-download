@@ -138,8 +138,41 @@
     <article class="release latest">
       <div class="card">
         <div class="head">
-          <span class="ver">v3.8.4</span>
+          <span class="ver">v3.8.5</span>
           <span class="badge">最新</span>
+          <span class="date">2026-11-15</span>
+        </div>
+
+        <div class="group-title new">新增功能</div>
+        <ul>
+          <li><b>群机器人（Webhook）</b>：群聊可添加机器人，外部系统通过 Webhook 把消息推送到群会话；
+            支持令牌管理、频率限制、幂等重试与投递审计</li>
+          <li><b>星标朋友</b>（桌面端）：好友资料卡可设为星标，通讯录星标分组置顶</li>
+          <li><b>朋友圈</b>：滚动时标题栏渐显、双击回到顶部，封面相机入口随滚动收起</li>
+          <li><b>朋友权限</b>：新增「不让他看我」「不看他」两个独立开关，覆盖朋友圈与状态</li>
+          <li><b>公众号</b>：收敛为单一 IM 会话入口，直接在聊天内交互</li>
+        </ul>
+
+        <div class="group-title imp">体验改进</div>
+        <ul>
+          <li>朋友权限改为底部弹层，补充权限说明文案，小屏可滚动</li>
+          <li>好友备注资料加载失败时阻断保存，避免空表单覆盖已有标签与描述</li>
+          <li>构建：<code>.sql</code> 强制 LF，避免 Windows 检出导致 embed 迁移校验失败</li>
+        </ul>
+
+        <div class="group-title fix">问题修复</div>
+        <ul>
+          <li>修复桌面端星标分组遍历全量数据导致的崩溃</li>
+          <li>修复朋友圈朋友权限弹层在小屏上的溢出与英文文案转义</li>
+          <li>修复 Webhook 机器人入站解码、令牌校验顺序与重复投递复用等边界问题</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="card">
+        <div class="head">
+          <span class="ver">v3.8.4</span>
           <span class="date">2026-11-14</span>
         </div>
 
