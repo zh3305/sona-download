@@ -1,21 +1,21 @@
 {
-  "versionName": "3.8.6",
-  "versionCode": 238,
-  "releaseDate": "2026-11-15",
+  "versionName": "3.8.7",
+  "versionCode": 239,
+  "releaseDate": "2026-11-19",
   "forceUpdate": false,
-  "notes": "Sona v3.8.6：Android 后台常驻与分厂商后台设置引导；公众号消息设置（接收消息 / 免打扰 / 置顶），关注后即可直接发消息；修复聊天视频播放闪退、公众号发消息被误报未加好友；Windows 后续版本支持差分升级。",
+  "notes": "Sona v3.8.7：新增消息收藏、合并转发、存储空间管理、全局搜索按类型分栏、登录安全提醒；应用内更新升级——桌面静默安装并自动重启、下载失败自动换源重试，移动端应用内下载直接安装不再跳浏览器；修复重启后全站提示登录、钱包卡片防伪造校验失效、删除会话与清空聊天记录缺陷。",
   "changelogUrl": "https://zh3305.github.io/sona-download/changelog.html",
   "platforms": {
     "android": {
       "file": "app-release.apk",
-      "size": 191620256,
-      "sha256": "1f171ad65dfe4e0c4db0830a4e290c8fdfdc3c492dab0948684e9bcf77cfd581",
+      "size": 192784124,
+      "sha256": "712fc5a98aed76f7f72f9b29ca0ae5d81c0a92200cf9bb88c3d58a274a4ca57d",
       "url": "https://github.com/zh3305/sona-download/releases/latest/download/app-release.apk"
     },
     "windows": {
       "file": "Sona-Windows-Setup.exe",
-      "size": 82397931,
-      "sha256": "acedddb0f475cb722e31eb46340204339587d82e0275dc3e5d5b802dede122f0",
+      "size": 120152249,
+      "sha256": "edb1b9d65464cc965f6396020ad4fda08285e04f73db3ba4a39468234a9ff288",
       "url": "https://github.com/zh3305/sona-download/releases/latest/download/Sona-Windows-Setup.exe"
     }
   }
