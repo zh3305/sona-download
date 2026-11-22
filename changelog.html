@@ -138,8 +138,49 @@
     <article class="release latest">
       <div class="card">
         <div class="head">
-          <span class="ver">v3.8.7</span>
+          <span class="ver">v3.8.8</span>
           <span class="badge">最新</span>
+          <span class="date">2026-11-22</span>
+        </div>
+
+        <div class="group-title new">新增功能</div>
+        <ul>
+          <li><b>语音转文字</b>：长按 / 右键语音消息即可转成文字，转写结果显示在气泡下方，
+            支持中英混说；服务端自部署推理，不依赖第三方云服务</li>
+          <li><b>聊天文件预览</b>：图片、文件在会话内直接预览，支持下载、保存到本地与打开，
+            下载进度以圆环显示</li>
+          <li><b>全局搜索时间范围</b>：按时间窗口筛选搜索结果，双端一致</li>
+        </ul>
+
+        <div class="group-title imp">体验改进</div>
+        <ul>
+          <li><b>安装包按 CPU 架构分包</b>：Android 改为 arm64 / armv7 两个独立安装包（63~76 MB），
+            客户端自动选择对应版本，不再为用不到的架构付流量（原整包 183.9 MB）</li>
+          <li><b>移动端下载升级</b>：APK 改为分片并发下载并支持断点续传，弱网下更稳；
+            校验失败的分片会被丢弃重下，不会让该版本永久卡死</li>
+          <li><b>桌面端更新进度可见</b>：「关于」面板新增检查更新入口，下载中显示实时进度，
+            下载期间拒绝重复检查</li>
+          <li>安装包完整性校验改为流式哈希，降低更新时的内存占用</li>
+          <li>聊天附件缩略图与文件下载链路优化，跨端一致性修复</li>
+          <li>公众号 H5 菜单在 App 内正常打开（不再因 HTTPS 限制白屏），按来源区分客户端与浏览器</li>
+        </ul>
+
+        <div class="group-title fix">问题修复</div>
+        <ul>
+          <li>修复语音转文字在收起时仍写回结果的竞态</li>
+          <li>修复 H5 页面切换公众号菜单需重复登录、旧 WebView 存储未清理的问题</li>
+          <li>修复打包产物启动门禁取错可执行文件名</li>
+          <li>修复移动端更新清单验签公钥不一致，补齐固定向量回归测试</li>
+          <li>修复 Windows 检出换行符导致验签夹具损坏、验签误判的问题</li>
+          <li>堵住出金确认、充值幂等与客户端明文资金请求的安全缺口</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="card">
+        <div class="head">
+          <span class="ver">v3.8.7</span>
           <span class="date">2026-11-19</span>
         </div>
 

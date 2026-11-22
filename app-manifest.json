@@ -1,22 +1,40 @@
 {
-  "versionName": "3.8.7",
-  "versionCode": 239,
-  "releaseDate": "2026-11-19",
+  "versionName": "3.8.8",
+  "versionCode": 240,
+  "releaseDate": "2026-11-22",
   "forceUpdate": false,
-  "notes": "Sona v3.8.7：新增消息收藏、合并转发、存储空间管理、全局搜索按类型分栏、登录安全提醒；应用内更新升级——桌面静默安装并自动重启、下载失败自动换源重试，移动端应用内下载直接安装不再跳浏览器；修复重启后全站提示登录、钱包卡片防伪造校验失效、删除会话与清空聊天记录缺陷。",
+  "notes": "Sona v3.8.8：新增语音转文字（长按/右键语音转文字）、聊天文件预览与下载、全局搜索时间范围；Android 安装包按 CPU 架构分包（63~76MB），移动端升级支持分片并发与断点续传，桌面端更新进度可见；修复 H5 菜单白屏与重复登录、更新验签公钥不一致、出金确认安全缺口。",
   "changelogUrl": "https://zh3305.github.io/sona-download/changelog.html",
   "platforms": {
     "android": {
-      "file": "app-release.apk",
-      "size": 192784124,
-      "sha256": "712fc5a98aed76f7f72f9b29ca0ae5d81c0a92200cf9bb88c3d58a274a4ca57d",
+      "file": "app-arm64-v8a-release.apk",
+      "size": 73013302,
+      "sha256": "671396755361a510622e4dc92804959d9c76b06ec1a286843d412da906ab44e9",
       "url": "https://github.com/zh3305/sona-download/releases/latest/download/app-release.apk"
     },
     "windows": {
       "file": "Sona-Windows-Setup.exe",
-      "size": 120152249,
-      "sha256": "edb1b9d65464cc965f6396020ad4fda08285e04f73db3ba4a39468234a9ff288",
+      "size": 120154912,
+      "sha256": "9e2dca06f97ebad0b2e1e8dc3e0d9f4258f9219d4a68084d0762a2985cbb4171",
       "url": "https://github.com/zh3305/sona-download/releases/latest/download/Sona-Windows-Setup.exe"
+    },
+    "android-arm64": {
+      "file": "app-arm64-v8a-release.apk",
+      "size": 73013302,
+      "sha256": "671396755361a510622e4dc92804959d9c76b06ec1a286843d412da906ab44e9",
+      "url": "https://github.com/zh3305/sona-download/releases/latest/download/app-arm64-v8a-release.apk"
+    },
+    "android-armv7": {
+      "file": "app-armeabi-v7a-release.apk",
+      "size": 66256638,
+      "sha256": "bcefd7070f599a94d2ebc97edc82bf45941640d504fa8b57dfd33d3a2deb2ce3",
+      "url": "https://github.com/zh3305/sona-download/releases/latest/download/app-armeabi-v7a-release.apk"
+    },
+    "android-x86_64": {
+      "file": "app-x86_64-release.apk",
+      "size": 79930964,
+      "sha256": "63d9d1cddaa39076dc26fcbed623b4b38f53bfc3ab318443a4adf178e5ac9172",
+      "url": "https://github.com/zh3305/sona-download/releases/latest/download/app-x86_64-release.apk"
     }
   }
 }
