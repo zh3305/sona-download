@@ -138,8 +138,37 @@
     <article class="release latest">
       <div class="card">
         <div class="head">
-          <span class="ver">v3.8.8</span>
+          <span class="ver">v3.8.9</span>
           <span class="badge">最新</span>
+          <span class="date">2026-11-25</span>
+        </div>
+
+        <div class="group-title fix">问题修复</div>
+        <ul>
+          <li><b>修复「检查更新」点了没反应</b>：失败时会明确提示「检查更新失败，请检查网络后重试」，
+            成功时提示「当前已是最新版本」；此前任何异常都被静默吞掉，用户看不到任何反馈</li>
+          <li><b>修复操作遮罩从不显示</b>：加载中的转圈此前因 Overlay 解析失败而永远不出现，
+            涉及发送文件、加好友、建群、群成员管理等 50 余处操作</li>
+          <li><b>修复全站提示气泡失效</b>：关注频道、公众号菜单操作、账号异常提醒等 12 处提示此前完全不显示</li>
+          <li><b>修复音视频通话界面弹不出来</b>：来电邀请与主动呼叫的界面此前无法显示，通话功能不可用</li>
+        </ul>
+
+        <div class="group-title imp">体验改进</div>
+        <ul>
+          <li><b>商家工作台整体改版</b>：双栏登录页、概览卡片重排、角色权限矩阵与无权访问页重构，
+            顶栏与多主体切换条改为双层布局，小屏与窄窗口下不再裁切</li>
+          <li>工作台与商业账本结算币种统一为 <b>USDT</b></li>
+          <li>商家入驻表单补齐校验，筛选检索与响应式布局优化，兼容非 HTTPS 环境</li>
+          <li>聊天附件与聊天记录搜索优化</li>
+          <li><b>扫码登录安全加固</b>：会话恢复与凭据投递链路收紧，降低被劫持风险</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="card">
+        <div class="head">
+          <span class="ver">v3.8.8</span>
           <span class="date">2026-11-22</span>
         </div>
 
