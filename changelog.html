@@ -138,8 +138,39 @@
     <article class="release latest">
       <div class="card">
         <div class="head">
-          <span class="ver">v3.8.9</span>
+          <span class="ver">v3.8.10</span>
           <span class="badge">最新</span>
+          <span class="date">2026-11-26</span>
+        </div>
+
+        <div class="group-title new">新增功能</div>
+        <ul>
+          <li><b>服务地址多域名容错</b>：客户端启动时按顺序探测多个服务域名，选中可用的并记住；
+            单个域名被屏蔽或解析失败时自动换下一条，不必重装客户端</li>
+          <li><b>商家工作台视觉升级</b>：Sona 频道工作台改为 Precision Fintech 风格，
+            统一卡片层级、数据密度与状态色，同屏可读信息更多</li>
+        </ul>
+
+        <div class="group-title imp">体验改进</div>
+        <ul>
+          <li>钱包、公众号、朋友圈等业务的请求统一走已选定的服务域名，不再各自硬编码地址</li>
+          <li>工作台「客户端配置」新增「服务地址」编辑项，可在线调整候选域名，无需发版</li>
+        </ul>
+
+        <div class="group-title fix">问题修复</div>
+        <ul>
+          <li><b>修复点开钱包提示「钱包服务连接不安全」</b>：此前钱包地址由编译期常量推导成明文 IP，
+            在校验处被直接拦截，功能不可用</li>
+          <li>修复频道所有者与运营查看「无工单的关注客户」会话与资料时被误判无权限的问题</li>
+          <li>修复公众号关注客户在无工单状态下无法进入会话的问题</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="card">
+        <div class="head">
+          <span class="ver">v3.8.9</span>
           <span class="date">2026-11-25</span>
         </div>
 
