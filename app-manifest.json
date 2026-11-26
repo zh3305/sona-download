@@ -1,40 +1,44 @@
 {
-  "versionName": "3.8.10",
-  "versionCode": 242,
+  "versionName": "3.8.11",
+  "versionCode": 2243,
   "releaseDate": "2026-11-26",
   "forceUpdate": false,
-  "notes": "Sona v3.8.10：新增服务地址多域名容错（单域名被屏蔽自动切换）、商家工作台 Precision Fintech 视觉升级；修复点开钱包提示「钱包服务连接不安全」、频道所有者查看无工单客户被误拦截。",
+  "notes": "Sona v3.8.11：修复检查更新一直提示「当前已是最新版本」——按架构分包后版本号带偏移，与清单基础版号比较恒判无更新（自 v3.8.8 起所有机型受影响）。",
   "changelogUrl": "https://zh3305.github.io/sona-download/changelog.html",
   "platforms": {
     "android": {
       "file": "app-arm64-v8a-release.apk",
       "size": 73013298,
-      "sha256": "37a6ed1a44d0158fd176b19c01c3664d704e2924fdb52d9d76d60575b4b25d9d",
-      "url": "https://github.com/zh3305/sona-download/releases/latest/download/app-release.apk"
+      "sha256": "77b20fc827e61d236b8943baadb679734587ddfdd98a729ef8a408b7f69482ee",
+      "url": "https://github.com/zh3305/sona-download/releases/latest/download/app-release.apk",
+      "versionCode": 2243
     },
     "windows": {
       "file": "Sona-Windows-Setup.exe",
-      "size": 120156817,
-      "sha256": "c21f8c88ce76f78c7c00b07bdd378b43b87de3e7a1c9d814528e4df17a408ef1",
+      "size": 120157222,
+      "sha256": "e985bd6e883a062ee6da9fb5f82d6deb23e0c6cd4b9ecbee94facf7856edcbfc",
       "url": "https://github.com/zh3305/sona-download/releases/latest/download/Sona-Windows-Setup.exe"
     },
     "android-arm64": {
       "file": "app-arm64-v8a-release.apk",
       "size": 73013298,
-      "sha256": "37a6ed1a44d0158fd176b19c01c3664d704e2924fdb52d9d76d60575b4b25d9d",
-      "url": "https://github.com/zh3305/sona-download/releases/latest/download/app-arm64-v8a-release.apk"
+      "sha256": "77b20fc827e61d236b8943baadb679734587ddfdd98a729ef8a408b7f69482ee",
+      "url": "https://github.com/zh3305/sona-download/releases/latest/download/app-arm64-v8a-release.apk",
+      "versionCode": 2243
     },
     "android-armv7": {
       "file": "app-armeabi-v7a-release.apk",
       "size": 66240254,
-      "sha256": "78c813340c7a88db4fde4ce199b0245090c0b81a70bbf52c9529402067e4dc3d",
-      "url": "https://github.com/zh3305/sona-download/releases/latest/download/app-armeabi-v7a-release.apk"
+      "sha256": "7b45f1f623580cf1ef6b45d601264816b86099da38c63fb8e640108008da7795",
+      "url": "https://github.com/zh3305/sona-download/releases/latest/download/app-armeabi-v7a-release.apk",
+      "versionCode": 1243
     },
     "android-x86_64": {
       "file": "app-x86_64-release.apk",
       "size": 79930960,
-      "sha256": "a6ee51c53edd8ca873b41ff29933839c6f66c843f990e83e8d8bb578b0f77908",
-      "url": "https://github.com/zh3305/sona-download/releases/latest/download/app-x86_64-release.apk"
+      "sha256": "0d005013495b208b8aec80f2c460916f2a4778b2857152efad408e6f304895fa",
+      "url": "https://github.com/zh3305/sona-download/releases/latest/download/app-x86_64-release.apk",
+      "versionCode": 4243
     }
   }
 }

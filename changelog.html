@@ -138,9 +138,32 @@
     <article class="release latest">
       <div class="card">
         <div class="head">
-          <span class="ver">v3.8.10</span>
+          <span class="ver">v3.8.11</span>
           <span class="badge">最新</span>
           <span class="date">2026-11-26</span>
+        </div>
+
+        <div class="group-title fix">问题修复</div>
+        <ul>
+          <li><b>修复检查更新一直提示「当前已是最新版本」</b>：按 CPU 架构分包后，安装包的实际
+            版本号带架构偏移（如 arm64 为 242+2000），而更新清单只写了基础版号，两者比较永远
+            判定「无更新」。从 v3.8.8 起所有机型都受影响，本版已修正</li>
+          <li>修复安装包下载页版本号与安装包实际版本号不一致的问题</li>
+        </ul>
+
+        <div class="group-title imp">体验改进</div>
+        <ul>
+          <li>版本比较增加语义化兜底：即使版号因架构偏移错位，仍能按 3.8.11 &gt; 3.8.10 正确判断</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="card">
+        <div class="head">
+          <span class="ver">v3.8.10</span>
+          <span class="date">2026-11-26</span>
+
         </div>
 
         <div class="group-title new">新增功能</div>
